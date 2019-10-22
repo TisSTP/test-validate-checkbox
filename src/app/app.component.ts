@@ -1,7 +1,8 @@
 import { Component, OnDestroy } from '@angular/core';
-import { FormArray, FormControl, FormGroup } from '@angular/forms';
+import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { untilDestroyed } from 'ngx-take-until-destroy';
 import { CheckboxValidator } from 'src/app/validators/checkbox-validator';
+import { LoginValidator } from 'src/app/validators/login-validator';
 import { logFormValidation } from 'src/app/validators/log-test-validator';
 
 @Component({
@@ -62,6 +63,7 @@ export class AppComponent implements OnDestroy {
 
   private buildForm() {
     this.inputForm = new FormGroup({
+      // password: new FormControl('', [Validators.required, LoginValidator.password()]),
       contractArrs: new FormArray([
         this.addItemContract(),
         this.addItemContract(),

@@ -1,5 +1,12 @@
 <form [formGroup]="inputForm">
 
+<!--  <input type="text" formControlName="password">
+  <code>{{inputForm.get('password').value.length}}</code>
+  <pre>{{ inputForm.get('password').errors | json}}</pre>
+
+  <br>
+  <br>-->
+
   <table formArrayName="contractArrs">
     <ng-container *ngFor="let item of data; trackBy:trackByContractId; let i = index">
       <tr [formGroupName]="i">
